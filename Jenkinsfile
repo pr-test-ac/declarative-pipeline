@@ -36,5 +36,10 @@ pipeline{
                 sh 'mvn package'
             }
         }
+        stage('Archive Artifact'){
+            steps{
+                archiveArtifacts artifacts: 'target/*.jar', followSymlinks: false
+            }
+        }
     }
 }
