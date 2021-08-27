@@ -31,11 +31,11 @@ pipeline{
                 sh 'mvn test'
             }
         }
-    //    stage('Package'){
-    //        steps{
-    //            sh 'mvn package'
-    //        }
-    //   }
+        stage('Package'){
+            steps{
+                sh 'mvn package'
+            }
+       }
         stage('Archive Artifact'){
             steps{
                 archiveArtifacts artifacts: 'target/*.jar', followSymlinks: false
